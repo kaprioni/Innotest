@@ -1,5 +1,6 @@
 describe('checking payment info at Paypal sandbox', function() {
     // Precond data
+    const targetURL = "https://www.sandbox.paypal.com/"
     const email = "sb-7znmw3731036@personal.example.com"
     const password = "hB-h-r%5"
     
@@ -14,7 +15,7 @@ describe('checking payment info at Paypal sandbox', function() {
 
     // Precondition
     beforeEach(function() {
-        browser.driver.get('https://www.sandbox.paypal.com/').then(() => {
+        browser.driver.get(targetURL).then(() => {
             browser.driver.manage().window().maximize()
 
             element(by.id('ul-btn')).click()
