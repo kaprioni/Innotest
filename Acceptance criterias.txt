@@ -1,5 +1,6 @@
 *On some website with paypal integration*
 
+>> Adding a card before making a payment
 Given that i'm in a role of registered or guest user
 When i click "Paypal" button
 Then web-browser opens new Paypal authentication window
@@ -12,6 +13,8 @@ When i fill in "First name", "Last name", "Card number", "Expiration date", "CVV
 AND click "Save" button
 Then Paypal adds new card to the payment options list
 
+
+>> Making a payment
 Given that i'm in a role of registered or guest user
 When i click "Paypal" button
 Then web-browser opens new Paypal authentication window
@@ -24,6 +27,7 @@ AND i have enough money (with the chosen payment option)
 Then system shows a success alert
 
 
+>> Checking payment data in a personal account
 Given that i'm in a role of signed out (of Paypal) user
 When i go to the Paypal sandbox website
 Then i see a login page
@@ -32,5 +36,3 @@ An i click the "Sign-in" button
 Then Paypal signs me in, showing my profile homepage
 When i click onto the recent transaction area
 Then Paypal shows me a detailed information about that transaction
-
-
