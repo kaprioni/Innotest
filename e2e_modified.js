@@ -25,7 +25,9 @@ describe('checking payment info at Paypal sandbox', function() {
             awaitElement(by.id, 'password').then((el) => el.sendKeys(password))
             awaitElement(by.id, 'btnLogin').then(el => el.click())
 
-            awaitElement(by.className, 'cw_tile-itemList', first = true).then((el) => el.click())
+            awaitElement(by.className, 'cw_tile-itemList', first = true).then((el) => {
+                el.element(by.xpath('./li[0]')).click()
+            })
         })
     })()
 
